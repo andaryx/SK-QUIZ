@@ -1,0 +1,177 @@
+body {
+  display: flex;
+  justify-content: center; /* Vycentrovanie vodorovne */
+  align-items: center;     /* Vycentrovanie zvislo (ak má body výšku) */
+  min-height: 100vh;       /* Aby bola stránka vysoká aspoň ako okno prehliadača */
+  margin: 0;
+  background-color: rgb(139, 208, 214);
+  color: rgb(65, 25, 25);
+  font-size: larger;
+  font-family: sans-serif;
+}
+
+strong{
+    color: red;
+}
+
+
+
+
+
+h1{
+    color: rgb(65, 25, 25);
+    font-size: xx-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-area: a;
+} 
+
+
+
+
+article{
+    background-color: rgb(172, 172, 172);
+     border: solid rgb(63, 156, 164) 5px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    margin: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 3.5rem 2rem 40px #3c5a70;
+    border-radius: 20px;
+}
+
+        /* tlačítka */
+
+/* 1. Odstránenie čiernych bodiek a odsadenia zo zoznamu */
+.options-list {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.options-list li {
+    margin-bottom: 5px; 
+}
+
+/* 2. Úplné skrytie toho malého hnusného štandardného checkboxu */
+.checkbox-wrapper input[type="checkbox"].check {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    pointer-events: none; /* Aby neprekážal pri klikaní */
+}
+
+/* 3. Základný reset pre prvky vnútri wrapperu */
+.checkbox-wrapper *,
+.checkbox-wrapper ::after,
+.checkbox-wrapper ::before {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.checkbox-wrapper {
+    position: relative;
+    display: block;
+}
+
+/* 4. Flexbox pre dokonalé zarovnanie SVG a textu */
+.checkbox-wrapper .label {
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Vycentruje štvorček a text vertikálne */
+    gap: 10px; /* Nastaví peknú medzeru medzi štvorčekom a textom */
+}
+
+/* 5. Zabezpečenie, aby sa SVG nezmenšovalo a bolo správne zarovnané */
+.checkbox-wrapper .label svg {
+    flex-shrink: 0; 
+    display: block;
+}
+
+/* 6. Animácia a vykreslenie fajky (zo stránky Uiverse) */
+.checkbox-wrapper .path1 {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    transition: .5s stroke-dashoffset;
+    opacity: 0;
+}
+
+/* Keď je skrytý input zaškrtnutý, ukáž fajku */
+.checkbox-wrapper .check:checked + .label svg g path {
+    stroke-dashoffset: 0;
+    opacity: 1;
+}
+
+/* 7. Úprava veľkosti samotného textu (voliteľné) */
+.option-text {
+    font-size: 24px; /* Môžeš zmeniť podľa potreby */
+    color: #333;
+}
+
+
+        /* vihodnocovačné-tlačidlo  */
+        /* From Uiverse.io by alexmaracinaru */ 
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
