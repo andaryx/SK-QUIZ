@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
        
         if (jeSpravne) {
-            vysledokElement.textContent = "Správna odpoveď! Marek Hamšík sa preslavil cyklistikov";
+            vysledokElement.textContent = "Správna odpoveď! Štefan Banič vynašiel padák";
             vysledokElement.style.color = "#108702"; // Zelená pre úspech
         } 
 
